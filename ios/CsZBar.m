@@ -92,7 +92,7 @@
         
         //The bar length it depends on the orientation
         toolbarViewFlash.frame = CGRectMake(0.0, 0, (screenWidth > screenHeight ?screenWidth:screenHeight), 44.0);
-        toolbarViewFlash.barStyle = UIBarStyleBlackOpaque;
+        toolbarViewFlash.barStyle = UIBarStyleBlack;
         UIBarButtonItem *buttonFlash = [[UIBarButtonItem alloc] initWithTitle:@"Flash" style:UIBarButtonItemStyleDone target:self action:@selector(toggleflash)];
         
         NSArray *buttons = [NSArray arrayWithObjects: buttonFlash, nil];
