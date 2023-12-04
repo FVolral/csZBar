@@ -21,7 +21,8 @@
 //  http://sourceforge.net/projects/zbar
 //------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+// #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @class ZBarHelpController;
 
