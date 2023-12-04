@@ -21,7 +21,7 @@
 //  http://sourceforge.net/projects/zbar
 //------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import "ZBarImageScanner.h"
 
 #ifdef __cplusplus
