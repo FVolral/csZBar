@@ -116,15 +116,18 @@
 
 - (void)toggleflash {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
+    AVCapturePhotoSettings *photosettings = [AVCapturePhotoSettings photoSettings];
+
     [device lockForConfiguration:nil];
     if (device.torchAvailable == 1) {
         if (device.torchMode == 0) {
             [device setTorchMode:AVCaptureTorchModeOn];
-            [device flashMode:AVCaptureFlashModeOn];
+            // [device flashMode:AVCaptureFlashModeOn];
+            photosettings.flashMode = AVCaptureFlashModeOn;
         } else {
             [device setTorchMode:AVCaptureTorchModeOff];
-            [device flashMode:AVCaptureFlashModeOff];
+            // [device flashMode:AVCaptureFlashModeOff];
+            photosettings.flashMode = AVCaptureFlashModeOff;
         }
     }
     
