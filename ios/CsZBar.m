@@ -79,8 +79,8 @@
             infoButtonIndex = 3;
         }
         // Corrige un bug de CZbar
-        // UIView *infoButton = [[[[[self.scanReader.view.subviews objectAtIndex:2] subviews] objectAtIndex:0] subviews] objectAtIndex:infoButtonIndex];
-        // [infoButton setHidden:YES];
+        UIView *infoButton = [[[[[self.scanReader.view.subviews objectAtIndex:2] subviews] objectAtIndex:0] subviews] objectAtIndex:infoButtonIndex];
+        [infoButton setHidden:YES];
 
         //UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem]; [button setTitle:@"Press Me" forState:UIControlStateNormal]; [button sizeToFit]; [self.view addSubview:button];
         CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -100,14 +100,14 @@
         [self.scanReader.view addSubview:toolbarViewFlash];
 
         if (drawSight) {
-            // CGFloat dim = screenWidth < screenHeight ? screenWidth / 1.1 : screenHeight / 1.1;
-            // UIView *polygonView = [[UIView alloc] initWithFrame: CGRectMake  ( (screenWidth/2) - (dim/2), (screenHeight/2) - (dim/2), dim, dim)];
+            CGFloat dim = screenWidth < screenHeight ? screenWidth / 1.1 : screenHeight / 1.1;
+            UIView *polygonView = [[UIView alloc] initWithFrame: CGRectMake  ( (screenWidth/2) - (dim/2), (screenHeight/2) - (dim/2), dim, dim)];
             
-            // UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0,dim / 2, dim, 1)];
-            // lineView.backgroundColor = [UIColor redColor];
-            // [polygonView addSubview:lineView];
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0,dim / 2, dim, 1)];
+            lineView.backgroundColor = [UIColor redColor];
+            [polygonView addSubview:lineView];
 
-            // self.scanReader.cameraOverlayView = polygonView;
+            self.scanReader.cameraOverlayView = polygonView;
         }
 
         [self.viewController presentViewController:self.scanReader animated:YES completion:nil];
