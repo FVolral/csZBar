@@ -21,7 +21,7 @@
 //  http://sourceforge.net/projects/zbar
 //------------------------------------------------------------------------
 
-// #import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
 @class ZBarHelpController;
@@ -37,7 +37,7 @@
 // failure dialog w/a few useful tips
 
 @interface ZBarHelpController : UIViewController
-                              < WKNavigationDelegate >
+                              < WKNavigationDelegate, UIAlertViewDelegate >
 {
     NSString *reason;
     id delegate;
